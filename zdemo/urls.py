@@ -18,6 +18,7 @@ from django.contrib import admin
 
 import auser.urls  # 先导入应用的urls模块
 import brouter.urls
+import brequest.urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),  # django默认包含的
@@ -26,5 +27,8 @@ urlpatterns = [
     url(r'^auser/', include(auser.urls)),  # 添加应用的路由
 
     # brouter路由
-    url(r'^brouter/', include(brouter.urls))  # 添加应用的路由
+    url(r'^brouter/', include(brouter.urls, namespace='brouter')),  # 添加应用的路由
+
+    url(r'^brequest/', include(brequest.urls)),
+
 ]

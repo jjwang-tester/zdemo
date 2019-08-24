@@ -13,4 +13,7 @@ urlpatterns = [
 
     # 4.非form表单解析：json xml str
     url(r'^brequest_not_form/$', views.login_not_form),
+
+    # 5.请求头信息
+    url(r'^brequest_headers/$', views.login_headers),
 ]

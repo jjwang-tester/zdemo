@@ -49,3 +49,15 @@ def login_not_form(request):
     print(type(json_data))
 
     return HttpResponse('4.非form表单参数解析：json xml str')
+
+# 5.请求头信息
+def login_headers(request):
+    # request.META meta
+    headers = request.META
+    print(headers)
+    print(type(headers))
+
+    # 交互的格式
+    print(headers['CONTENT_TYPE'])
+
+    return HttpResponse('5.请求头信息')

@@ -19,6 +19,7 @@ from django.contrib import admin
 import auser.urls  # 先导入应用的urls模块
 import brouter.urls
 import brequest.urls
+import cresponse.urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),  # django默认包含的
@@ -30,5 +31,8 @@ urlpatterns = [
     url(r'^brouter/', include(brouter.urls, namespace='brouter')),  # 添加应用的路由
 
     url(r'^brequest/', include(brequest.urls)),
+
+    # 学习response的应用
+    url(r'^cresponse/', include(cresponse.urls)),
 
 ]

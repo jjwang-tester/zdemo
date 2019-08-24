@@ -20,3 +20,14 @@ def login_query(request):
     print(params.get('b'))
 
     return HttpResponse("2.解析查询参数！")
+
+# 3.form表单参数的解析
+def login_form(request):
+    params = request.POST
+    print(params)
+    print(type(params))
+    print(params.getlist('a'))
+    print(params.getlist('a')[0])
+    print(params.get('b'))
+
+    return HttpResponse('3.form表单参数的解析')

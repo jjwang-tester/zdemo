@@ -6,5 +6,8 @@ urlpatterns = [
     url(r'^brequest_connect/(?P<year>\d{4})/(?P<city>[a-zA-Z]+)/$', views.login_connect),
 
     # 2.解析查询参数 ？a=10&b=20 解析查询参数
-    url(r'^brequest_query/$', views.login_query)
+    url(r'^brequest_query/$', views.login_query),
+
+    # 3.form表单参数的解析
+    url(r'^brequest_form/$', views.login_form),
 ]

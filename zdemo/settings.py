@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# 工程项目路径 Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -20,12 +20,19 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# 加签（加密的意思）↑生产中加签
 SECRET_KEY = '-aj0_rx9(@0#6b@vyjh-ev*8+b+ugw(@g0%l69jv0svbgu62%s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# 调试模式 ， ↑生产中不要使用调试模式
 
+# 测试开发环境
+DEBUG = True
 ALLOWED_HOSTS = []
+
+# 生产环境和发布环境
+# DEBUG = False  # 关闭调试
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -38,8 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'auser.apps.AuserConfig',
+
 ]
 
+# 中间件
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -50,8 +59,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# django项目入口 第一个路由配置 root_urlconf
 ROOT_URLCONF = 'zdemo.urls'
 
+# 模板配置
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -68,12 +79,14 @@ TEMPLATES = [
     },
 ]
 
+# 部署协议
 WSGI_APPLICATION = 'zdemo.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# 数据库的配置默认sqlite3
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -85,6 +98,7 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
+# 权限认证
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -104,9 +118,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# 本地化
+# LANGUAGE_CODE = 'en-us'  #  默认英文
+LANGUAGE_CODE = 'zh-Hans'  # 设置为中文
 
-TIME_ZONE = 'UTC'
+# 时区
+# TIME_ZONE = 'UTC'  # 默认国外时区
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -117,5 +135,5 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
+# 静态文件
 STATIC_URL = '/static/'

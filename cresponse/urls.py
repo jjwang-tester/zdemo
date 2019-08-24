@@ -9,4 +9,6 @@ urlpatterns = [
     # json数据响应
     url(r'^response_json/$', views.login_JsonResponse),
 
+    # 重定向redirect
+    url(r'^response_redirect/$', views.login_redirect)
 ]

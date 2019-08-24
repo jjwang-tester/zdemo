@@ -1,9 +1,9 @@
 from django.shortcuts import render
-
+from django.urls.base import reverse
 # Create your views here.
 from django.http.response import HttpResponse, HttpResponseBadRequest
 from django.http.response import JsonResponse
-
+from django.shortcuts import redirect
 # 普通响应对象
 def login_response(request):
     # 1. 操作 参数
@@ -23,8 +23,6 @@ def login_response(request):
     response.status_code = HttpResponseBadRequest.status_code
     # 返回实例化对象（被请求的响应）
 
-    return response
-
 
 # 操作 JsonResponse
 # 帮我们做了两件事
@@ -37,3 +35,9 @@ def login_JsonResponse(request):
     }
 
     return JsonResponse(dict_data)
+
+def login_redirect(request):
+
+    # return redirect('/auser/index/')
+    # return redirect(reverse('redirect'))
+    return redirect('https://www.baidu.com/')

@@ -2,6 +2,8 @@ from django.http.response import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
+# 打开pycharm 自带的git界面 ctrl + k
+
 '''
 # 创建视图函数 
     1. 接收请求对象

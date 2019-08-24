@@ -15,7 +15,6 @@ import os
 # 工程项目路径 Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -28,7 +27,9 @@ SECRET_KEY = '-aj0_rx9(@0#6b@vyjh-ev*8+b+ugw(@g0%l69jv0svbgu62%s'
 
 # 测试开发环境
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '192.168.1.123',
+]
 
 # 生产环境和发布环境
 # DEBUG = False  # 关闭调试
@@ -82,7 +83,6 @@ TEMPLATES = [
 # 部署协议
 WSGI_APPLICATION = 'zdemo.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
@@ -93,7 +93,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -114,7 +113,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -132,8 +130,10 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 # 静态文件
-STATIC_URL = '/static/'
+STATIC_URL = '/static/'  # 用户访问的url路径
+STATICFILES_DIRS = [  # 存放查找静态文件的目录,接收的是list
+    os.path.join(BASE_DIR, 'static_files'),
+]

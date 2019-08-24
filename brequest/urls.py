@@ -10,4 +10,7 @@ urlpatterns = [
 
     # 3.form表单参数的解析
     url(r'^brequest_form/$', views.login_form),
+
+    # 4.非form表单解析：json xml str
+    url(r'^brequest_not_form/$', views.login_not_form),
 ]

@@ -45,8 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'auser.apps.AuserConfig',
 
+    'auser.apps.AuserConfig',
+    'brouter.apps.BrouterConfig',
 ]
 
 # 中间件
